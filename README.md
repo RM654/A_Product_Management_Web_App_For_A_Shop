@@ -245,7 +245,7 @@ This will create database.db with a products table.
 
 Ensure your project folder is structured like this: 
 
-E-Shop/ 
+E-Shop\
 
 
    app.py 
@@ -254,7 +254,7 @@ E-Shop/
   
    database.db (optional, will be created if not present) 
   
-   templates/ 
+   templates\ 
   
        layout.html 
      
