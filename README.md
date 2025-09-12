@@ -172,3 +172,108 @@ SQLite in Python
 Bootstrap 5
 
 Stack Overflow (various threads on Flask forms, session handling, and SQLite queries)
+
+
+
+
+Project Setup Instructions 
+
+ 1. Clone or Download the Project 
+
+git clone URL - https://github.com/RM654/E-Shop.git  
+ 
+
+If you're creating it from scratch, just ensure all the following files exist: 
+
+app.py 
+
+models.py 
+
+templates (with all the .html files) 
+
+database.db (or let it generate on first run) 
+
+ 
+
+2. Create a Virtual Environment (Recommended) 
+
+python -m venv venv 
+source venv/bin/activate  # On Windows: venv\Scripts\activate 
+ 
+
+ 
+
+3. Install Dependencies 
+
+Create a requirements.txt file with: 
+
+Flask==2.3.2 
+ 
+
+Then install: 
+
+pip install -r requirements.txt 
+ 
+
+If requirements.txt doesn't exist: 
+
+pip install Flask 
+ 
+
+ 
+
+4. Initialize the SQLite Database 
+
+The app auto-initializes the database on first run using: 
+
+init_db() 
+ 
+
+But to initialize it manually: 
+
+python 
+>>> from models import init_db 
+>>> init_db() 
+>>> exit() 
+ 
+
+This will create database.db with a products table. 
+
+ 
+
+5. Set Up the Project Structure 
+
+Ensure your project folder is structured like this: 
+
+E-Shop 
+│ 
+├── app.py 
+├── models.py 
+├── database.db (optional, will be created if not present) 
+├── templates 
+    ├── layout.html 
+    ├── index.html 
+    ├── product_detail.html 
+    └── product_form.html 
+ 
+
+ 
+
+6. Run the Flask App 
+
+In your terminal: 
+
+export FLASK_APP=app.py          # On Windows: set FLASK_APP=app.py 
+export FLASK_ENV=development     # Optional: enables debug mode 
+flask run 
+ 
+
+Or directly with Python: 
+
+python app.py 
+ 
+
+The app will be accessible at: 
+
+http://127.0.0.1:5000/ 
+ 
