@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="card-title">{{ product.name }}</h2>
+        <hr>
+        <p><strong>Price:</strong> <span class="text-success">${{ product.price }}</span></p>
+        <p><strong>Category:</strong> <span class="badge bg-info text-dark">{{ product.category }}</span></p>
+        <p><strong>Tags:</strong> {{ product.tags }}</p>
+        <p><strong>Description:</strong> {{ product.description }}</p>
+
+        <div class="mt-4">
+            <a href="/edit/{{ product.id }}" class="btn btn-warning">✏️ Edit</a>
+            <form method="post" action="/delete/{{ product.id }}" style="display: inline;">
+                <button type="submit" class="btn btn-danger">🗑️ Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if recommendations %}
+<h4 class="mt-5">🔎 Recommended Products</h4>
+<ul class="list-group">
+    {% for rec in recommendations %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <a href="/product/{{ rec.id }}">{{ rec.name }}</a>
+        <span class="text-success">${{ rec.price }}</span>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
