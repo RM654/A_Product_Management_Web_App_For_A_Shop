@@ -247,21 +247,22 @@ Ensure your project folder is structured like this:
 
 E-Shop 
 
-  app.py 
+
+   app.py 
   
-  models.py 
+   models.py 
   
-  database.db (optional, will be created if not present) 
+   database.db (optional, will be created if not present) 
   
-  templates 
+   templates 
   
-     layout.html 
+       layout.html 
      
-     index.html 
+       index.html 
      
-     product_detail.html 
+       product_detail.html 
      
-     product_form.html 
+       product_form.html 
  
 
  
